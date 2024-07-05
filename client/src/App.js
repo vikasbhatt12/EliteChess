@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Guest from './pages/Guest';
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-// import ComputerGame from "./ComputerGame";
+import ComputerGame from "./Chess_AI/ComputerGame";
 import "./styles.css"; // Add any global styles here
 import './App.css'; // Import the CSS file
 import Dashboard from "./pages/Dashboard";
@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/login" element={<Login setUsername={setUsername} setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup setUsername={setUsername} setIsLoggedIn={setIsLoggedIn} />}/>
         <Route path="/guest" element={<Guest/>} />
-        {/* <Route path="/play-with-computer" element={<ComputerGame />} /> */}
+        <Route path="/play-with-computer" element={<ComputerGame />} />
         <Route path="/home" element={
           <PrivateRoute isLoggedIn={isLoggedIn}>
             <Home username={username}/>
