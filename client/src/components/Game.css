@@ -1,0 +1,306 @@
+/* Container for the entire game */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+  }
+  
+  /* Card style for the room information */
+  .game-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .game-card h5 {
+    margin: 0;
+    margin-right: 10px;
+  }
+  
+  .game-card button {
+    padding: 5px 10px;
+    border: none;
+    background: #7F4EE2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* Added for tooltip positioning */
+  }
+  
+  .game-card button:hover {
+    background: #7F4EE2;
+  }
+  
+  .tooltip {
+    position: absolute;
+    background-color: #7F4EE2; /* Assuming this is the value of var(--vb-violet2) */
+    color: white; /* Assuming this is the value of var(--vb-yellow) */
+    font-size: 1.15rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+  }
+  
+  .tooltip.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Content area for the board and player list */
+  .game-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap; 
+    gap: 10px;
+  }
+  
+  /* Container for the chess board */
+  .board-container {
+    max-width: 400px;
+    max-height: 600px;
+    flex-grow: 1;
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid #7F4EE2;
+    border-radius: 10px;
+    /* overflow: hidden; */
+  }
+  
+  /* Player list styles */
+  .player-list {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    
+    margin-left: 20px;
+  }
+  
+  /* Overlay for the dialog */
+  .dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Dialog box styles */
+  .dialog {
+    background: white;
+    
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .dialog button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #AA01D2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dialog button:hover {
+    background: #7F4EE2;
+  }
+
+  .top_player{
+    
+    display: flex;
+    background-color: white;
+    align-items: center;
+    height: 30px;
+    
+   
+  }
+  
+  .bottom_player{
+   
+    display: flex;
+    background-color: white;
+    height: 30px;
+    align-items: center;
+    
+
+  }
+
+  .profile-pic {
+    width: 30px;          /* Adjust width as needed */
+    height: 30px;         /* Adjust height as needed */
+    border-radius: 50%;   /* Makes the image round */
+    object-fit: cover;    /* Ensures the image covers the entire area */
+    margin-right: 10px;   /* Optional: Adds space to the right of the image */
+  }
+
+  
+  
+  /* .timer {
+    font-size: 16px;     /* Adjust font size as needed */
+   /* margin-left: 10px;   /* Adjust spacing as needed 
+  // */
+  
+  .square-55d63 {
+    position: relative;
+  }
+  
+  .square-55d63::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    background:  rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  .square-55d63.highlight {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+  
+
+/* Timer styles */
+.timers {
+  display: flex;
+  justify-content: space-between;
+  ;
+  width: 10%;
+  margin-top: 10px;
+}
+
+.move-list h5{
+  align-items: center;
+}
+
+.timer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px;
+
+ 
+}
+
+.move-list-section {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 600px;
+}
+
+.SideBar{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: flex-start;
+  height: 450px;
+  max-width: 400px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  border: 2px solid #3f51b5;
+  max-height: 600px;
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #fff;
+  height: 200px; /* Adjust height as needed */
+  
+}
+
+.chat-section h5 {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.timer-section h5 {
+  font-size: 10px;
+  margin: 0 0 5px 0;
+}
+
+.timer {
+  font-size: 35px;     /* Adjust font size as needed */
+     
+}
+  
+.undo-redo-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.undo-redo-buttons button {
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #7F4EE2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.undo-redo-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.draw-offer{
+  display: flex;
+  flex-direction: column;
+  border-bottom: #7F4EE2;
+  
+
+}
+
+.draw-offer p{
+  margin-top: 0%;
+  padding-top: 0%;
+  margin-left: 20px;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  
+
+}
+
+.draw-offer-buttons{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.draw-offer-buttons button{
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #7F4EE2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 60px;;
+
+}
+
+
