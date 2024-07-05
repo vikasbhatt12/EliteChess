@@ -11,6 +11,11 @@ app.use(cors({
   methods: ['GET', 'POST'],
 }));
 
+app.get('/about', (request, response) =>  {
+  response.send("this is about page");
+})
+
+
 
 const server = http.createServer(app);
 const port = process.env.PORT || 8080;
